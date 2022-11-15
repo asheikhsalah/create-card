@@ -1,0 +1,6 @@
+{
+  "name": "node-xmvdwp",
+  "dependencies": {
+    "isomorphic-fetch": "^3.0.0"
+  }
+}
