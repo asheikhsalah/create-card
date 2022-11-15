@@ -4,18 +4,36 @@ if (typeof window !== 'undefined') {
   console.log('You are on the server')
 }
 
-
 const fetch = require ("isomorphic-fetch")
 
-async function funcName(item) {
+class Card {
+  constructor(jsonres) {
+    this.id = jsonres.id
+    this.kids = jsonres.kids
+    this.parent = jsonres.parent
+    this.text = jsonres.text
+  }
+  createCard() {
+    const container = document.createElement("div")
+    const text = document.createElement("p")
+    const id = document.createElement("p")
+
+    text.innerText = `${this.text}`
+    
+  }
+
+}
+
+async function displayInfo(item) {
+
+  try{
     const response= await fetch (`https://hacker-news.firebaseio.com/v0/item/${item}.json`);
     const data = await response.json();
-    const newDiv = document.createElement("div");
-    const newContent = document.createTextNode(`${data}`);
-    newDiv.appendChild(newContent);
-    const currentDiv = document.getElementById("div1");
-    document.body.insertBefore(newDiv, currentDiv);
+    console.log(data)} catch(error) {
+      console.log(error, "error")}
   }
 
 
- funcName(8855);
+
+
+ displayInfo(8855);
