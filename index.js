@@ -14,7 +14,7 @@ class Card {
     this.text = jsonres.text
   }
   createCard() {
-    const container = document.createElement("div")
+    // const container = document.createElement("div")
     const text = document.createElement("p")
     const id = document.createElement("p")
 
